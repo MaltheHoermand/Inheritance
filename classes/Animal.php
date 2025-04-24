@@ -6,11 +6,11 @@ class Animal
 {
 
     /**
-     * @var $say_what
+     * @var String $say_what
      */
     protected $say_what;
     /**
-     * @var $num_of_legs
+     * @var Int $num_of_legs
      */
     protected $num_of_legs;
 
@@ -31,7 +31,7 @@ class Animal
 
     /**
      * Returns $say_what property
-     * @return mixed
+     * @return String
      */
     public function get_say_what () {
         return $this->say_what;
@@ -39,7 +39,7 @@ class Animal
 
     /**
      * Returns $num_of_legs property
-     * @return mixed
+     * @return Int
      */
     public function get_num_of_legs() {
         return $this->num_of_legs;

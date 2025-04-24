@@ -5,13 +5,13 @@ require_once "classes/Animal.php";
 class Pet extends Animal
 {
     /**
-     * @var $pet_name
+     * @var String $pet_name
      */
     protected $pet_name;
 
     /**
      * Returns $pet_name property
-     * @return mixed
+     * @return String
      */
     public function get_pet_name () {
         return $this->pet_name;

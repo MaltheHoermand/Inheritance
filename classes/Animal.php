@@ -20,7 +20,13 @@ class Animal
      * @return void
      */
     public function set_say_what ($say_what) {
-        $this->say_what = $say_what;
+
+        if (is_string($say_what)) {
+            $this->say_what = $say_what;
+        } else {
+            throw new InvalidArgumentException("Argument must be a string");
+        }
+
     }
 
     /**
@@ -45,7 +51,12 @@ class Animal
      * @return void
      */
     public function set_num_of_legs ($num_of_legs) {
-        $this->num_of_legs = $num_of_legs;
+        if (is_int($num_of_legs)) {
+            $this->num_of_legs = $num_of_legs;
+        } else {
+            throw new InvalidArgumentException("Argument must be an integer");
+        }
+
     }
 
     /**

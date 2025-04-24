@@ -9,7 +9,13 @@ class Dog extends Pet
      */
     public function __construct()
     {
-        $this->set_say_what("Vuf");
-        $this->set_num_of_legs(4);
+        try {
+            $this->set_say_what("Vuf");
+            $this->set_num_of_legs(4);
+
+        } catch (InvalidArgumentException $e) {
+            echo "Argument exception: " . $e->getMessage();
+        }
+
     }
 }

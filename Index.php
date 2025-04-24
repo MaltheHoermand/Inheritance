@@ -4,23 +4,32 @@ require_once "classes/Cat.php";
 require_once "classes/Dog.php";
 require_once "classes/Giraffe.php";
 
-/**
- * Array containing animals
- */
-$animals = [
-    new Cat(),
-    new Cat(),
-    new Dog(),
-    new Dog(),
-    new Giraffe()
-];
+
 /**
  * setting pet names for the pets in the animal list
  */
-$animals[0]->set_pet_name("Fluffy");
-$animals[1]->set_pet_name("Whiskers");
-$animals[2]->set_pet_name("Rolf");
-$animals[3]->set_pet_name("Pjuske");
+try {
+    /**
+     * Array containing animals
+     */
+    $animals = [
+        new Cat(),
+        new Cat(),
+        new Dog(),
+        new Dog(),
+        new Giraffe()
+    ];
+
+    $animals[0]->set_pet_name("Fluffy");
+    $animals[1]->set_pet_name("Whiskers");
+    $animals[2]->set_pet_name("Rolf");
+    $animals[3]->set_pet_name("Pjuske");
+
+} catch (InvalidArgumentException $e) {
+    echo "Argument exception: " . $e->getMessage();
+}
+
+
 
 /**
  * Loops through animals array and runs relevant print methods

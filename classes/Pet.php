@@ -23,7 +23,12 @@ class Pet extends Animal
      * @return void
      */
     public function set_pet_name ($pet_name) {
-        $this->pet_name = $pet_name;
+        if (is_string($pet_name)) {
+            $this->pet_name = $pet_name;
+        } else {
+            throw new InvalidArgumentException("Argument must be a string");
+        }
+
     }
 
     /**
